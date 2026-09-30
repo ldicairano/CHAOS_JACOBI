@@ -1,0 +1,30 @@
+&system
+  cluster_time = 172800
+/
+
+&model
+  auto_coup = .true.
+  coup   = 1.0      ! every values: if auto_coup=.true. then coup=(N-1)/(8N)
+  mu     = 1.0
+  lambda = 6.0
+/
+
+
+&run
+  n_steps = 1000000
+  n_jump  = 100
+  n_therm = 10
+  n_realiz = 1
+  n_print  = 100
+  time_dyn = .true.
+  n_print_inst = 10
+/
+
+&ioctl
+  out_dir = "out"
+  restart_dir = "out/restart"
+/
+
+&rngctl
+  seed = 12345
+/
